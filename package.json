@@ -8,7 +8,7 @@
     "format": "biome format --write .",
     "lint": "biome lint .",
     "check": "biome check --write .",
-    "dev": "live-server public --port=8080",
+    "dev": "live-server docs --port=8080",
     "test": "node --test"
   },
   "keywords": [],

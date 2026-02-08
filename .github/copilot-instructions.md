@@ -4,7 +4,7 @@ Purpose: onboard an AI agent quickly so it can make safe, minimal changes to thi
 
 ## Project snapshot
 
-Static single-page app (SPA) that displays a different Touhou character daily. App is deterministic—same day always shows same character. All logic in `public/js/`, assets in `public/assets/`.
+Static single-page app (SPA) that displays a different Touhou character daily. App is deterministic—same day always shows same character. All logic in `docs/js/`, assets in `docs/assets/`.
 
 ## Architecture: Character Rotation System
 
@@ -24,10 +24,10 @@ Static single-page app (SPA) that displays a different Touhou character daily. A
 
 ## Essential files
 
-- [public/js/character.js](../public/js/character.js) — `CHARACTERS` list (5 chars × 2 exhibits each), `generateBag()`, `getTodayCharacter()`, RNG logic
-- [public/js/time.js](../public/js/time.js) — `getDayIndex()` (days since epoch), `getMsToNextDay()` (ms until next KST midnight), `EPOCH_KST_MIDNIGHT_MS`
-- [public/js/app.js](../public/js/app.js) — `boot()` function: initial render + recursive timeout schedule
-- [public/index.html](../public/index.html) — DOM elements: `todayName`, `todayCharIcon`, `todayExhibit`
+- [docs/js/character.js](../docs/js/character.js) — `CHARACTERS` list (5 chars × 2 exhibits each), `generateBag()`, `getTodayCharacter()`, RNG logic
+- [docs/js/time.js](../docs/js/time.js) — `getDayIndex()` (days since epoch), `getMsToNextDay()` (ms until next KST midnight), `EPOCH_KST_MIDNIGHT_MS`
+- [docs/js/app.js](../docs/js/app.js) — `boot()` function: initial render + recursive timeout schedule
+- [docs/index.html](../docs/index.html) — DOM elements: `todayName`, `todayCharIcon`, `todayExhibit`
 
 ## Critical knowledge: KST timezone handling
 
@@ -70,7 +70,7 @@ Static single-page app (SPA) that displays a different Touhou character daily. A
 
 ## Common tasks
 
-- **Add character:** Add entry to `CHARACTERS`, add icon/exhibit assets to `public/assets/` subdirs
+- **Add character:** Add entry to `CHARACTERS`, add icon/exhibit assets to `docs/assets/` subdirs
 - **Change rotation speed:** Adjust `BAG_SIZE` (but ask first—affects all dates)
 - **Verify a day's character:** `getDayIndex(new Date('2024-01-11T00:00:00+09:00'))` in console, derive bagIndex/posInBag, check `generateBag(bagIndex)[pos]`
 - **Debug scheduling:** Check `getMsToNextDay()` output near midnight in browser console
@@ -78,7 +78,7 @@ Static single-page app (SPA) that displays a different Touhou character daily. A
 ## Project files at a glance
 
 ```
-public/
+docs/
   index.html           ← DOM, minimal
   js/
     app.js            ← entry point, boot & schedule
