@@ -1,0 +1,22 @@
+{
+  "name": "lbol-daily-character",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --write .",
+    "dev": "live-server public --port=8080",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "live-server": "^1.2.2"
+  }
+}
